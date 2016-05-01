@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="parkingList">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+    <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+  </head>
+
+  <body ng-controller="ListController as list">
+    <!--  Store Header  -->
+    <header>
+      <h1 class="text-center">台中市停車資訊</h1>
+    </header>
+
+    <!--  Products Container  -->
+    <div class="list-group">
+      <!--  Product Container  -->
+      <div class="list-group-item" ng-repeat="parking in list.parkings">
+        <h3>{{parking.name}} <em class="pull-right">{{parking.price | currency:"TWD$"}}/小時</em></h3>
+        <h3>車位:{{parking.space}}</h3>
+        <h3>使用中:{{parking.occupied}}</h3>
+      </div>
+
+    </div>
+  </body>
+</html>
